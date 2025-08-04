@@ -22,7 +22,7 @@ def is_text_valid_for_lang(text: str, lang: str) -> bool:
     return re.match(patterns.get(lang, r".*"), text) is not None
 
 @app.route("/", methods=["GET", "POST"])
-def function():
+def home():
     if request.method == 'GET':
 
         if app.debug:
@@ -51,7 +51,6 @@ def function():
             tts = gTTS(text=text, lang=lang, tld="com")
             tts.write_to_fp(fp)
             fp.seek(0)
-            
             audio_base64 = base64.b64encode(fp.getvalue()).decode("utf-8")
 
             image_url = os.path.join(app.root_path, "static", "david.jpg")
