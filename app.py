@@ -58,7 +58,6 @@ def home():
                 image_base64 = base64.b64encode(f.read()).decode("utf-8")
 
             return render_template("index.html", audio=audio_base64, image=image_base64)
-
         except ValueError as ve:
             return render_template("index.html", error=str(ve)), 400
 
