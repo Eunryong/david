@@ -5,6 +5,7 @@ from io import BytesIO
 from gtts import gTTS
 import base64
 from datetime import datetime
+import socket
 
 app = Flask(__name__)
 
@@ -21,9 +22,15 @@ def is_text_valid_for_lang(text: str, lang: str) -> bool:
     return re.match(patterns.get(lang, r".*"), text) is not None
 
 @app.route("/", methods=["GET", "POST"])
-def post():
+def function():
     if request.method == 'GET':
-        return render_template('index.html', title="Flask Example", name="은룡")
+
+        if app.debug:
+            hostname = '컴퓨터(인스턴스) : ' + socket.gethostname()
+        else:
+            hostname = ' '
+            
+        return render_template('index.html', title="Flask Example", name="은룡", computername=hostname)
     elif request.method == 'POST':
         try:
             text = request.form.get('input_text', '').strip()
@@ -62,5 +69,6 @@ def post():
 @app.route("/menu")
 def menu():
     return render_template('menu.html')
+
 if __name__ == '__main__':
-    app.run('0.0.0.0', 8080)
+    app.run('0.0.0.0', 8080, debug=True)
