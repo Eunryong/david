@@ -59,7 +59,8 @@ def post():
         except Exception as tts_error:
             return render_template("index.html", error=str(tts_error)), 500
 
-
-
+@app.route("/menu")
+def menu():
+    return render_template('menu.html')
 if __name__ == '__main__':
     app.run('0.0.0.0', 8080)
