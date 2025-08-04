@@ -1,0 +1,101 @@
+# === Python 기본 ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# === Flask 특화 항목 ===
+instance/
+.webassets-cache
+*.log
+
+# === 환경 설정 ===
+.env
+.envrc
+.flaskenv
+config.py.local
+local_settings.py
+
+# === 데이터베이스 ===
+*.db
+*.sqlite
+*.sqlite3
+db.sqlite3
+db.sqlite3-journal
+migrations/versions/*.py  # 필요시
+app.db
+
+# === 업로드 파일 ===
+uploads/
+static/uploads/
+media/
+
+# === 세션 및 캐시 ===
+flask_session/
+.cache
+redis-data/
+
+# === 로그 파일 ===
+*.log
+logs/
+app.log
+error.log
+access.log
+
+# === 테스트 ===
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+
+# === 배포 관련 ===
+build/
+dist/
+*.egg-info/
+.Python
+wheels/
+
+# === 가상환경 ===
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# === IDE 설정 ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# === 운영체제 ===
+.DS_Store
+Thumbs.db
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# === SSL 인증서 ===
+*.pem
+*.key
+*.crt
+*.csr
+
+# === 백업 파일 ===
+*.bak
+*.backup
+*.old
+*.orig
+
+# === 임시 파일 ===
+tmp/
+temp/
+*.tmp
+*.temp
