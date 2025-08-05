@@ -67,6 +67,5 @@ def home():
 @app.route("/menu")
 def menu():
     return render_template('menu.html')
-
 if __name__ == '__main__':
     app.run('0.0.0.0', 8080, debug=True)
